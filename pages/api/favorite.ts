@@ -9,6 +9,11 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
+    if (req.method === "GET") {
+      const { currentUser } = await serverAuth(req, res);
+      return res.status(200).json(currentUser);
+    }
+
     if (req.method === "POST") {
       const { currentUser } = await serverAuth(req, res);
       const { movieId } = req.body;
