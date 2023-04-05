@@ -18,6 +18,21 @@ yarn dev
 pnpm dev
 ```
 
+(optional) If there persists any error relating to the database schema not being generated. <br>
+Make sure there is a .env file with the proper environment variables. <br>
+Generate new schema:
+
+```bash
+npx prisma generate
+```
+
+synchronize with the DB:
+
+```bash
+npx prisma db push
+```
+
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
